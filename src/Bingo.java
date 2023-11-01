@@ -5,8 +5,8 @@ public class Bingo {
     public static void main(String[] args) {
         // Solicitar la cantidad de cartones
       //  int cantidadCartones = solicitarCantidadCartones();
-        String entrada = JOptionPane.showInputDialog("Ingrese la cantidad de cartones (1-12):");
-        int cantidadCartones = Integer.parseInt(entrada);
+        int cantidadCartones;
+        cantidadCartones = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de cartones (1-12):"));
 
         if (cantidadCartones <= 0 || cantidadCartones > 12) {
             JOptionPane.showMessageDialog(null, "La cantidad de cartones debe estar entre 1 y 12.");
