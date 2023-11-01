@@ -29,6 +29,10 @@ public class Bingo {
             System.out.println("Cartón " + nombresCartones[i] + ":");
             mostrarCarton(cartones[i]);
         }
+
+        // Generar y mostrar letras BINGO con números aleatorios
+        generarLetrasBINGO();
+
     }
 /*
     private static int solicitarCantidadCartones() {
@@ -59,17 +63,29 @@ public class Bingo {
         String[] columnas = {"B", "I", "N", "G", "O"};
         int currentIndex = 0;
 
-        for (String columna : columnas) {
-            System.out.print(columna + "\t");
+        for (int i = 0; i < columnas.length; i++) {
+            System.out.print(columnas[i] + "\t");
         }
         System.out.println();
 
         for (int i = 0; i < 5; i++) {
-            for (String columna : columnas) {
+            for (int j = 0; j < columnas.length; j++) {
                 System.out.print(carton[currentIndex] + "\t");
                 currentIndex++;
             }
             System.out.println();
         }
     }
+
+    private static void generarLetrasBINGO() {
+        Random random = new Random();
+        String[] letras = {"B", "I", "N", "G", "O"};
+
+        for (int i = 0; i < letras.length; i++) {
+            String letra = letras[i];
+            int numeroAleatorio = random.nextInt(15) + 1; // Genera números y letra BINGO
+            System.out.println(letra + " " + numeroAleatorio);
+        }
+    }
+
 }
